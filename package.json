@@ -1,0 +1,11 @@
+{
+  "name": "ecmascript6",
+  "version": "1.0.0",
+  "description": "getting start with this",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pabloantipan",
+  "license": "MIT"
+}
