@@ -75,4 +75,91 @@ console.log(globalVar);
 console.log(globalLet); // it is not accessible
 
 // var declaration and initilizing
-const a = 'b';
+const c = 'b'; // can't be changed
+var a = 'b';
+a = 'a';
+console.log(a);
+
+// object declaration
+let name = 'pablo';
+let age = 38;
+// es5
+obj = { name: name, age: age };
+// es6
+obj2 = { name, age };
+console.log(obj2)
+
+// arrow function
+const names = [
+    { name: 'Pablo', age: 38 },
+    { name: 'Christian', age: 20 }
+]
+
+let listOfNames = names.map(function(item) {
+    console.log(item.name);
+});
+
+let listOfNames2 = names.map(item => console.log(item.name))
+
+const listOFNames3 = (name, age, country) => {
+    console.log('listOfNames3', name, age, country);
+}
+listOFNames3('Alejandro', 50, 'Venezuela')
+
+const listOFNames4 = name => {
+    console.log('listOfNames4', name);
+}
+listOFNames4('Pablo')
+
+const square = num => num * num;
+
+// promises 
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if (false) {
+            resolve('Hey!');
+        } else {
+            reject('Ups!!');
+        }
+    });
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+    .then(() => console.log('Hola!'));
+
+// classes
+class Calculator {
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+    sum(a, b) {
+        this.valueA = a;
+        this.valueB = b;
+        return this.valueA + this.valueB;
+    }
+}
+const calc = new Calculator();
+console.log(calc.sum(2, 3));
+
+// import modules
+import { hello } from './module'
+console.log(hello());
+
+// generators
+function* helloWorld() {
+    if (true) {
+        yield 'Hello, ';
+    }
+    if (true) {
+        yield 'World';
+    }
+}
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+
+// hasta aqui ecmascript6
